@@ -1,15 +1,17 @@
-interface Info {
+import { type ReactNode } from "react";
+
+interface CoarseGoalProps {
   title: string;
-  description: string;
+  children: ReactNode;
 }
 
-export default function CoarseGoal(props: Info) {
-  const { title, description } = props;
+export default function CoarseGoal(props: CoarseGoalProps) {
+  const { title, children } = props;
   return (
     <article>
       <div>
         <h2>{title}</h2>
-        <p>{description}</p>
+        {children}
       </div>
       <button>Delete</button>
     </article>
